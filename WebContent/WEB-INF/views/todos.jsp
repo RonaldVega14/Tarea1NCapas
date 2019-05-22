@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<h3>Hay ${cantLibros} libros en existencia, de ${numAutores} cantidad de autores
+<h3>Hay ${cantLibros} libros en existencia, de ${numAutores} autores
 diferentes</h3>
 
 	<table>
