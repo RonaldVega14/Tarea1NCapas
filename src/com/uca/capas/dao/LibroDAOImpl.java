@@ -28,21 +28,30 @@ public class LibroDAOImpl implements LibroDAO {
 	}
 
 	@Override
-	public List<Libro> findAllByAuthor() throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Libro> findAllByAuthor(String autor) throws DataAccessException {
+		StringBuffer sb = new StringBuffer();
+		sb.append("select * from public.libro where autor LIKE CONCAT('%',?,'%')");
+		Query query = entityManager.createNativeQuery(sb.toString(), Libro.class);
+		query.setParameter(1, autor);
+		return query.getResultList();
 	}
 
 	@Override
-	public List<Libro> findAllByISBN() throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Libro> findAllByISBN(String ISBN) throws DataAccessException {
+		StringBuffer sb = new StringBuffer();
+		sb.append("SELECT * FROM public.libro WHERE isbn LIKE CONCAT('%',?,'%')");
+		Query query = entityManager.createNativeQuery(sb.toString(), Libro.class);
+		query.setParameter(1, ISBN);
+		return query.getResultList();
 	}
 
 	@Override
-	public List<Libro> findAllByGenero() throws DataAccessException {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Libro> findAllByGenero(String genero) throws DataAccessException {
+		StringBuffer sb = new StringBuffer();
+		sb.append("SELECT * FROM public.libro WHERE genero LIKE CONCAT('%',?,'%')");
+		Query query = entityManager.createNativeQuery(sb.toString(), Libro.class);
+		query.setParameter(1, genero);
+		return query.getResultList();
 	}
 
 }

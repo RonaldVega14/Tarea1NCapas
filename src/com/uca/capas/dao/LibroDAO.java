@@ -10,10 +10,10 @@ public interface LibroDAO {
 
 	public List<Libro> findAll() throws DataAccessException;
 
-	public List<Libro> findAllByAuthor() throws DataAccessException;
+	public List<Libro> findAllByAuthor(String autor) throws DataAccessException;
 
-	public List<Libro> findAllByISBN() throws DataAccessException;
+	public List<Libro> findAllByISBN(String ISBN) throws DataAccessException;
 
-	public List<Libro> findAllByGenero() throws DataAccessException;
+	public List<Libro> findAllByGenero(String genero) throws DataAccessException;
 
 }

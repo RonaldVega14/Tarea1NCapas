@@ -11,7 +11,7 @@ public class Libro {
 
 	@Id
 	@Column(name = "isbn")
-	private Integer isbn;
+	private String isbn;
 
 	@Column(name = "autor")
 	private String autor;
@@ -25,7 +25,7 @@ public class Libro {
 	@Column(name = "titulo")
 	private String titulo;
 
-	public Libro(Integer isbn, String autor, String genero, Integer cantidad, String titulo) {
+	public Libro(String isbn, String autor, String genero, Integer cantidad, String titulo) {
 		super();
 		this.isbn = isbn;
 		this.autor = autor;
@@ -38,11 +38,11 @@ public class Libro {
 		super();
 	}
 
-	public Integer getIsbn() {
+	public String getIsbn() {
 		return isbn;
 	}
 
-	public void setIsbn(Integer isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 
