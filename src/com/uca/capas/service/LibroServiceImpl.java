@@ -4,32 +4,35 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Service;
 
+import com.uca.capas.dao.LibroDAO;
 import com.uca.capas.domain.Libro;
 
+@Service
 public class LibroServiceImpl implements LibroService {
 
 	@Autowired
-	private LibroService libroService;
+	private LibroDAO libroDao;
 
 	@Override
 	public List<Libro> findAll() throws DataAccessException {
-		return libroService.findAll();
+		return libroDao.findAll();
 	}
 
 	@Override
 	public List<Libro> findAllByAuthor() throws DataAccessException {
-		return libroService.findAllByAuthor();
+		return libroDao.findAllByAuthor();
 	}
 
 	@Override
 	public List<Libro> findAllByISBN() throws DataAccessException {
-		return libroService.findAllByISBN();
+		return libroDao.findAllByISBN();
 	}
 
 	@Override
 	public List<Libro> findAllByGenero() throws DataAccessException {
-		return libroService.findAllByGenero();
+		return libroDao.findAllByGenero();
 	}
 
 }
