@@ -11,8 +11,11 @@
 </head>
 <body>
 
-<form action = "${pageContext.request.contextPath}/formData" method = "POST">
+<h1>Biblioteca virtual</h1>
+
+<form action = "${pageContext.request.contextPath}/buscarLibro" method = "get">
 	<label>Buscar por: </label>
+	
   <select name="idCategory">
     <option value="1">---</option>
     <option value="2">ISBN</option>
@@ -22,15 +25,14 @@
 	<br>
 	<br>
 	<input type = "text" name = "filtro"/><br><br>
-	
-	
-	<form action="${pageContext.request.contextPath}/search" method = "post">
-	<input type="submit" value = "Buscar">
+	<input type = "submit" value = "buscar">
 	</form>
+	
+	
 	<br>
-	<form action="${pageContext.request.contextPath}/all" method = "post">
-	<input type="submit" value = "Ver Todos">
-	</form>
+	<form action="${pageContext.request.contextPath}/buscarTodos" method="get">
+		<input type="submit" value="Ver todos">
+</form>
 
 	
 </body>
