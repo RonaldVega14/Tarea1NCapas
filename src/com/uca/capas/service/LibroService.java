@@ -8,10 +8,10 @@ public interface LibroService {
 
 	public List<Libro> findAll();
 
-	public List<Libro> findAllByAuthor();
+	public List<Libro> findAllByAuthor(String autor);
 
-	public List<Libro> findAllByISBN();
+	public List<Libro> findAllByISBN(String s);
 
-	public List<Libro> findAllByGenero();
+	public List<Libro> findAllByGenero(String genero);
 
 }

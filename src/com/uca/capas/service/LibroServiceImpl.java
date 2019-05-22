@@ -21,18 +21,18 @@ public class LibroServiceImpl implements LibroService {
 	}
 
 	@Override
-	public List<Libro> findAllByAuthor() throws DataAccessException {
-		return libroDao.findAllByAuthor();
+	public List<Libro> findAllByAuthor(String autor) throws DataAccessException {
+		return libroDao.findAllByAuthor(autor);
 	}
 
 	@Override
-	public List<Libro> findAllByISBN() throws DataAccessException {
-		return libroDao.findAllByISBN();
+	public List<Libro> findAllByISBN(String isbn) throws DataAccessException {
+		return libroDao.findAllByISBN(isbn);
 	}
 
 	@Override
-	public List<Libro> findAllByGenero() throws DataAccessException {
-		return libroDao.findAllByGenero();
+	public List<Libro> findAllByGenero(String genero) throws DataAccessException {
+		return libroDao.findAllByGenero(genero);
 	}
 
 }
