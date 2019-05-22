@@ -1,112 +1,87 @@
 package com.uca.capas.domain;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(schema="public",name="student")
-public class Student {
-	
+@Table(schema = "public", name = "libro")
+public class Libro {
+
 	@Id
-	@Column(name="id_student")
-	private Integer cStudent;
-	
-	@Column(name="s_name")
-	private String sName;
-	
-	@Column(name="s_lname")
-	private String lName;
-	
-	@Column(name="s_age")
-	private Integer sAge;
-	
-	@Column(name="b_active")
-	private Boolean bActivo;
+	@Column(name = "isbn")
+	private Integer isbn;
 
-	//Constructors, Setters y Getters
-	public Student(Integer cCLiente, String sName, String lName, Integer sAge, Boolean bActivo) {
+	@Column(name = "autor")
+	private String autor;
+
+	@Column(name = "genero")
+	private String genero;
+
+	@Column(name = "cantidad")
+	private Integer cantidad;
+
+	@Column(name = "titulo")
+	private String titulo;
+
+	public Libro(Integer isbn, String autor, String genero, Integer cantidad, String titulo) {
 		super();
-		this.cStudent = cCLiente;
-		this.sName = sName;
-		this.lName = lName;
-		this.sAge = sAge;
-		this.bActivo = bActivo;
+		this.isbn = isbn;
+		this.autor = autor;
+		this.genero = genero;
+		this.cantidad = cantidad;
+		this.titulo = titulo;
 	}
-	
-	public Student() {
+
+	public Libro() {
 		super();
 	}
 
-
-
-
-
-	//Setters y Getters
-
-
-	public String getsName() {
-		return sName;
+	public Integer getIsbn() {
+		return isbn;
 	}
 
-	public Integer getcStudent() {
-		return cStudent;
+	public void setIsbn(Integer isbn) {
+		this.isbn = isbn;
 	}
 
-	public void setcStudent(Integer cStudent) {
-		this.cStudent = cStudent;
+	public String getAutor() {
+		return autor;
 	}
 
-	public void setsName(String sName) {
-		this.sName = sName;
+	public void setAutor(String autor) {
+		this.autor = autor;
 	}
 
-	public String getlName() {
-		return lName;
+	public String getGenero() {
+		return genero;
 	}
 
-	public void setlName(String lName) {
-		this.lName = lName;
-	}
-	
-
-	public Integer getsAge() {
-		return sAge;
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 
-	public void setsAge(Integer sAge) {
-		this.sAge = sAge;
+	public Integer getCantidad() {
+		return cantidad;
 	}
 
-	public Boolean getbActivo() {
-		return bActivo;
+	public void setCantidad(Integer cantidad) {
+		this.cantidad = cantidad;
 	}
 
-	public void setbActivo(Boolean bActivo) {
-		this.bActivo = bActivo;
+	public String getTitulo() {
+		return titulo;
 	}
-	
-	//Funciones delegate
-	public String getActivoDelegate() {
-		if(this.bActivo == null) return "";
-		else {
-			return bActivo == true ?"Activo":"Inactivo";
-		}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
-	
-	/*public String getFechaDelegate() {
-		if(this.bDate == null) return "";
-		else {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			return sdf.format(this.bDate.getTime());
-		}
-	}*/
-	
+
+	/*
+	 * public String getFechaDelegate() { if(this.bDate == null) return ""; else {
+	 * SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); return
+	 * sdf.format(this.bDate.getTime()); } }
+	 */
+
 }

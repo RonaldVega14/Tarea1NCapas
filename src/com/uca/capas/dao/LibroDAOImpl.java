@@ -5,54 +5,44 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.transaction.Transactional;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import com.uca.capas.domain.Student;
+import com.uca.capas.domain.Libro;
 
 @Repository
-public class StudentDAOImpl implements StudentDAO {
+public class LibroDAOImpl implements LibroDAO {
 
-	@PersistenceContext(unitName="capas")
+	@PersistenceContext(unitName = "capas")
 	private EntityManager entityManager;
-	
-	@Transactional
-	public int save(Student s, Integer newRow) throws DataAccessException{
-		try {
-			if(newRow == 1) entityManager.persist(s);
-			else entityManager.merge(s);
-			entityManager.flush();
-			return 1;
-		}catch(Throwable e) {
-			e.printStackTrace();
-			return 1;
-		}
-	}
 
 	@Override
-	public List<Student> findAll() throws DataAccessException {
+	public List<Libro> findAll() throws DataAccessException {
 		// TODO Auto-generated method stub
 		StringBuffer sb = new StringBuffer();
-		sb.append("select * from public.student");
-		Query query = entityManager.createNativeQuery(sb.toString(),Student.class);
-		List<Student> resulset= query.getResultList();
-		
+		sb.append("select * from public.libro");
+		Query query = entityManager.createNativeQuery(sb.toString(), Libro.class);
+		List<Libro> resulset = query.getResultList();
 		return resulset;
 	}
 
 	@Override
-	public Student findOne(Integer code) throws DataAccessException {
+	public List<Libro> findAllByAuthor() throws DataAccessException {
 		// TODO Auto-generated method stub
-		Student student = entityManager.find(Student.class, code);
-		return student;
+		return null;
 	}
 
 	@Override
-	public int delete(Student s) throws DataAccessException {
+	public List<Libro> findAllByISBN() throws DataAccessException {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
-	
+
+	@Override
+	public List<Libro> findAllByGenero() throws DataAccessException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
