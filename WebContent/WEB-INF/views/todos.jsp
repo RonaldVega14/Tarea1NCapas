@@ -10,6 +10,9 @@
 </head>
 <body>
 
+<h3>Hay ${cantLibros} libros en existencia, de ${numAutores} cantidad de autores
+diferentes</h3>
+
 	<table>
 		<tr>
 			<th>ISBN</th>

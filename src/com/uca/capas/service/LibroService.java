@@ -14,4 +14,6 @@ public interface LibroService {
 
 	public List<Libro> findAllByGenero(String genero);
 
+	public String findAllAuthors();
+
 }

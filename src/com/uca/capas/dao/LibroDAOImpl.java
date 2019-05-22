@@ -54,4 +54,13 @@ public class LibroDAOImpl implements LibroDAO {
 		return query.getResultList();
 	}
 
+	@Override
+	public String findAllAuthors() throws DataAccessException {
+		StringBuffer sb = new StringBuffer();
+		sb.append("SELECT COUNT(DISTINCT(autor)) FROM public.libro");
+		Query query = entityManager.createNativeQuery(sb.toString());
+		String result = query.getSingleResult().toString();
+		return result;
+	}
+
 }

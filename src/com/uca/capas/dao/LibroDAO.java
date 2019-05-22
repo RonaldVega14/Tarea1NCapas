@@ -16,4 +16,5 @@ public interface LibroDAO {
 
 	public List<Libro> findAllByGenero(String genero) throws DataAccessException;
 
+	public String findAllAuthors() throws DataAccessException;
 }

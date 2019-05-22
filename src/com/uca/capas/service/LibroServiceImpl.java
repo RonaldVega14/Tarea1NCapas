@@ -35,4 +35,9 @@ public class LibroServiceImpl implements LibroService {
 		return libroDao.findAllByGenero(genero);
 	}
 
+	@Override
+	public String findAllAuthors() {
+		return libroDao.findAllAuthors();
+	}
+
 }

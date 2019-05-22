@@ -19,6 +19,8 @@ public class LibroController {
 
 	@RequestMapping("/buscarTodos")
 	public ModelAndView findAll() {
+		Integer cantLibros = 0;
+		String numAutores;
 		ModelAndView mav = new ModelAndView();
 		List<Libro> libros = null;
 		try {
@@ -26,7 +28,10 @@ public class LibroController {
 		} catch (Exception e) {
 
 		}
-
+		cantLibros = libros.size();
+		numAutores = libroService.findAllAuthors();
+		mav.addObject("cantLibros", cantLibros);
+		mav.addObject("numAutores", numAutores);
 		mav.addObject("libros", libros);
 		mav.setViewName("todos");
 		return mav;
